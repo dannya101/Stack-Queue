@@ -2,72 +2,52 @@
 using namespace std;
 
 class Node {
-  // Write Node Description here
-  // Node variables are given in Assignment
   private: 
   int data = 0;
   Node *nextNode;
 
   public:
-  Node(int theData)
-  {
+  Node(int theData) {
     data = theData;
     nextNode = nullptr;
   }
-  int getData()
-  {
+  int getData(){
     return data;
   }
-  void setData(int newData)
-  {
+  void setData(int newData){
     data = newData;
   }
-  Node* getNext()
-  {
+  Node* getNext(){
     return nextNode;
   }
-  void setNext(Node* nextNod)
-  {
+  void setNext(Node* nextNod){
     nextNode = nextNod;
   }
-
 };
 class LLStack {
-  // Stack ADT
-  //  Use Appropriate Variables
-  //  Write Stack methods here
   //  Stack is implemented as a linked list
-  //   Stack methods are Push(), Pop(), Peek()
+  //  Stack methods are Push(), Pop(), Peek()
   private: 
   Node *top;
   int stackSize = -1;
   
-
   public:
-  LLStack()
-  {
+  LLStack(){
     stackSize = 0;
   }
-  int getSize()
-  {
+  int getSize(){
     return stackSize;
   }
-  void setSize(int size)
-  {
+  void setSize(int size) {
     stackSize = size;
   }
-  Node* getTop()
-  {
+  Node* getTop() {
     return top;
   }
-  void setTop(Node *theTop)
-  {
+  void setTop(Node *theTop){
     top = theTop;
   }
-
-
-  void Push(int num)
-  {
+  void Push(int num) {
     Node *aNode = new Node(num);
     if(top == nullptr)
     {
@@ -90,7 +70,6 @@ class LLStack {
     Node *temp = top;
     int tempdata = temp->getData();
     // top = top->getNext(); // this whats causing segmentation fault
-
     //cout << "Deleted top is " << temp->getData() << endl;
    
     top = temp->getNext();
@@ -133,9 +112,6 @@ class LLStack {
 };
 
 class StackQ  {
-  // Queue ADT
-  //  This is your queue class
-  //  Implement queue methods here
   //  Queue methods are given in the Assignment
   //  Queue is implemented by manipulating two stacks.
   //  You will need references to 2 stacks here
