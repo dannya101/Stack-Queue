@@ -5,7 +5,7 @@ class Node {
   // Write Node Description here
   // Node variables are given in Assignment
   private: 
-  int data;
+  int data = 0;
   Node *nextNode;
 
   public:
@@ -40,7 +40,7 @@ class LLStack {
   //   Stack methods are Push(), Pop(), Peek()
   private: 
   Node *top;
-  int stackSize;
+  int stackSize = -1;
   
 
   public:
@@ -184,8 +184,8 @@ class StackQ  {
   
   void peek()
   {
-    int hold;
-    int holdPeek;
+    int hold = -1;
+    int holdPeek = -1;
     while(enQStack->getSize() != 0)
     {
       hold = enQStack->Pop();
@@ -206,7 +206,7 @@ class StackQ  {
   }
   void print()
   {
-    int hold;
+    int hold = -1;
     while(enQStack->getSize() != 0)
     {
       hold = enQStack->Pop();
@@ -227,7 +227,7 @@ class StackQ  {
   void printStack(LLStack *myList)
   {
     LLStack *temp = new LLStack();
-    int hold;
+    int hold = -1;
     while(myList->getSize() != 0)
     {
       hold = myList->Pop();
@@ -254,8 +254,8 @@ int main() {
   // Implement appropriate exception Handling
   StackQ stack;
   bool isBool = true;
-  string choice;
-  int numChoice;
+  string choice = "";
+  int numChoice = -1;
   while(isBool)
   {
     goBack:
